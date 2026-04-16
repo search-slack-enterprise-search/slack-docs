@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 概要
 
-このディレクトリはダウンロードされた Slack 開発者ドキュメントのスナップショットを含む。`docs/` はタイムスタンプ付きのスナップショットディレクトリ (`../../02_scripts/download_slack_docs/docs/` 以下) へのシンボリックリンク。
+このディレクトリは [Slack Developer Docs](https://docs.slack.dev/) をダウンロードしたスナップショットを含む。`docs/` はタイムスタンプ付きのスナップショットディレクトリへのシンボリックリンク。
 
 ドキュメントは Slack のデベロッパープラットフォーム全般をカバーしており、特に **Enterprise Search** — Slack 内から外部データソースをリアルタイム検索できる機能 — に焦点を当てている。
 
@@ -37,4 +37,4 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## ドキュメントスナップショットの更新
 
-ダウンロードスクリプトは `../../02_scripts/download_slack_docs/` にある。再実行後、`docs` シンボリックリンクを新しいタイムスタンプ付きスナップショットディレクトリに向け直す。
+ダウンロードスクリプトでドキュメントを再取得後、`docs` シンボリックリンクを新しいタイムスタンプ付きスナップショットディレクトリに向け直す。
