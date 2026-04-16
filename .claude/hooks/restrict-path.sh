@@ -44,8 +44,8 @@ while IFS= read -r allowed || [[ -n "$allowed" ]]; do
   fi
 done < "$WHITELIST_FILE"
 
-# ブロック前にログ
-echo "{\"decision\": \"deny\", \"reason\": \"Path '$PATH_ARG' is outside...\"}"
+echo "INPUT: $TOOL_INPUT" >> /tmp/restrict-debug.log
+echo "PATH_ARG: $PATH_ARG" >> /tmp/restrict-debug.log
 
 # ホワイトリスト外 → ブロック
 echo "{\"decision\": \"deny\", \"reason\": \"Path '$PATH_ARG' is outside allowed directories. Edit .claude/path-whitelist.txt to add it.\"}"

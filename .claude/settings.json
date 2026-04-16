@@ -10,6 +10,9 @@
     "allow": [
       "Read",
       "Search",
+      "Grep",
+      "Glob",
+      "LS",
       "Write(kanban/)",
       "Write(kanban/*)",
       "Write(kanban/**)",
