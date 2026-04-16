@@ -1,61 +1,74 @@
 {
   "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
     "network": {
       "allowedDomains": ["github.com"]
     }
   },
   "permissions": {
     "allow": [
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Read(docs/)",
-      "Read(docs/*)",
-      "Read(docs/**)",
-      "Read(docs/**/*)",
-      "Read(kanban/)",
-      "Read(kanban/*)",
-      "Read(kanban/**)",
-      "Read(kanban/**/*)",
+      "Read",
+      "Search",
       "Write(kanban/)",
       "Write(kanban/*)",
       "Write(kanban/**)",
       "Write(kanban/**/*)",
+      "Write(kanban/**/*.md)",
       "Update(kanban/)",
       "Update(kanban/*)",
       "Update(kanban/**)",
       "Update(kanban/**/*)",
+      "Update(kanban/**/*.md)",
       "Edit(kanban/)",
       "Edit(kanban/*)",
       "Edit(kanban/**)",
       "Edit(kanban/**/*)",
+      "Edit(kanban/**/*.md)",
       "MultiEdit(kanban/)",
       "MultiEdit(kanban/*)",
       "MultiEdit(kanban/**)",
       "MultiEdit(kanban/**/*)",
-      "Read(logs/)",
-      "Read(logs/*)",
-      "Read(logs/**)",
-      "Read(logs/**/*)",
+      "MultiEdit(kanban/**/*.md)",
       "Write(logs/)",
       "Write(logs/*)",
       "Write(logs/**)",
       "Write(logs/**/*)",
+      "Write(logs/**/*.md)",
       "Update(logs/)",
       "Update(logs/*)",
       "Update(logs/**)",
       "Update(logs/**/*)",
+      "Update(logs/**/*.md)",
       "Edit(logs/)",
       "Edit(logs/*)",
       "Edit(logs/**)",
       "Edit(logs/**/*)",
+      "Edit(logs/**/*.md)",
       "MultiEdit(logs/)",
       "MultiEdit(logs/*)",
       "MultiEdit(logs/**)",
-      "MultiEdit(logs/**/*)"
+      "MultiEdit(logs/**/*)",
+      "MultiEdit(logs/**/*.md)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   },
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Grep|Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/restrict-path.sh"
+          }
+        ]
+      }
+    ],
     "UserPromptSubmit": [
       {
         "matcher": "",
@@ -63,17 +76,6 @@
           {
             "type": "command",
             "command": "bash .claude/hooks/check-kanban.sh"
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "(Edit|Write)",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash .claude/hooks/sync-agents-md.sh"
           }
         ]
       }
