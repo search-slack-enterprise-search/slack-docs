@@ -11,7 +11,10 @@
       "Bash(git push:*)",
       "Read(docs/**)",
       "Read(docs/**/*)",
-      "Write(kanban/*)"
+      "Write(kanban/**)",
+      "Update(kanban/**)",
+      "Write(logs/**)",
+      "Update(logs/**)"
     ]
   },
   "hooks": {
