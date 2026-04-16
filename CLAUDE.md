@@ -29,9 +29,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## `/kanban` によるドキュメント調査
 
-ドキュメントの調査タスクは `/kanban` コマンドで管理する。`kanban/` にタスクファイルを作成し、`/kanban` を実行すると、プランニング→実装（調査）→ログ記録の流れで進む。
+ドキュメントの調査タスクは `/kanban` スキルで管理する。`kanban/` にタスクファイルを作成し、`/kanban` を実行すると、調査→ログ記録の流れで進む。
 
-- タスクファイルの形式・命名規則: `.claude/kanban-workflow.md` を参照
+- タスクファイルの形式・命名規則: `~/.claude/skills/kanban/references/kanban-workflow.md` を参照
 - 調査結果は `logs/` に詳細ログとして記録される
 - Enterprise Search が主な調査対象だが、関連するドキュメント（Work Objects・認証・Web API など）も調査範囲に含む
 
