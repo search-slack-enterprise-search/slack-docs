@@ -4,9 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 概要
 
-このディレクトリは [Slack Developer Docs](https://docs.slack.dev/) をダウンロードしたスナップショットを含む。`docs/` はタイムスタンプ付きのスナップショットディレクトリへのシンボリックリンク。
+このリポジトリは [Slack Developer Docs](https://docs.slack.dev/) をダウンロードしたスナップショットを含む。`docs/` はタイムスタンプ付きのスナップショットディレクトリへのシンボリックリンク。
 
-ドキュメントは Slack のデベロッパープラットフォーム全般をカバーしており、特に **Enterprise Search** — Slack 内から外部データソースをリアルタイム検索できる機能 — に焦点を当てている。
+ドキュメントは Slack のデベロッパープラットフォーム全般をカバーしている。
+
+今回の調査では特に **Enterprise Search** — Slack 内から外部データソースをリアルタイム検索できる機能 —で何ができるかに焦点をあてている。
+とはいえ、実際の調査ではそれにこだわらず 検索/探索 してほしい。
 
 ## ドキュメント構成
 
@@ -38,3 +41,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## ドキュメントスナップショットの更新
 
 ダウンロードスクリプトでドキュメントを再取得後、`docs` シンボリックリンクを新しいタイムスタンプ付きスナップショットディレクトリに向け直す。
+
+## ツール使用方針
+
+- ファイル検索には `grep` ではなく `rg` (ripgrep)を使用すること
+- ファイル探索には `find` ではなく `fd` を使用すること
+- `grep -r` や `find` は使わず、常に `rg` / `fd` を使うこと
