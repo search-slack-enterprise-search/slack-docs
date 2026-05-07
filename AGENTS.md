@@ -35,6 +35,12 @@ This file provides guidance to AI coding agents when working with code in this r
 - 調査結果は `logs/` に詳細ログとして記録される
 - Enterprise Search が主な調査対象だが、関連するドキュメント（Work Objects・認証・Web API など）も調査範囲に含む
 
+## ツール使用方針
+
+- ファイル検索には `grep` ではなく `rg` (ripgrep)を使用すること
+- ファイル探索には `find` ではなく `fd` を使用すること
+- `grep -r` や `find` は使わず、常に `rg` / `fd` を使うこと
+
 ## ドキュメントスナップショットの更新
 
 ダウンロードスクリプトは `../../02_scripts/download_slack_docs/` にある。再実行後、`docs` シンボリックリンクを新しいタイムスタンプ付きスナップショットディレクトリに向け直す。

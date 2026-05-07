@@ -47,4 +47,4 @@ $ARGUMENTS
 - **判断・意思決定**: 調査上の判断・解釈のトレードオフを記録する
 - **問題・疑問点**: 調査中に発生した問題や未解決の疑問を記録する
 
-詳細なテンプレートは `$HOME/.claude/skills/kanban/references/kanban-workflow.md` を参照すること。
+詳細なテンプレートは `references/kanban-workflow.md` を参照すること。
